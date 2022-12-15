@@ -1,0 +1,22 @@
+<form [formGroup]="userSortingForm" (ngSubmit)="onSubmit()">
+    <div class="grid-container">
+        <div>
+            <label>Enter a name:&nbsp;&nbsp;
+            <input class="input" type="text" formControlName="userName">
+            </label>
+        </div>
+        <div>
+            <label>Enter an email:&nbsp;&nbsp;
+              <input class="input" type="text" formControlName="email">
+            </label>
+        </div>
+        <div>
+            <label>Is banned:&nbsp;&nbsp;
+              <input type="checkbox" formControlName="isBanned">
+            </label>
+        </div>
+        <div class="btn">
+            <button type="submit">Apply</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,51 @@
+<form [formGroup]="textMaterialForm" (ngSubmit)="onSubmit()">
+    <div class="grid-container">
+        <div class="create-text-material">
+            Create a text material
+        </div>
+        <div class="input">
+            <input class="input-item" type="text" placeholder="Enter a title" formControlName="title">
+            <div class="error" *ngIf="submitted && title.errors">
+                <div class="error" *ngIf="title.errors['required']">
+                    This field is required
+                </div>
+                <div class="error" *ngIf="title.errors['minlength'] || title.errors['maxlength']">
+                    Title must be 5 to 100 characters long
+                </div>
+            </div>
+        </div>
+        <div class="input">
+            <label class="categoryTitle-label">
+            Choose category:
+            <select class="categoryTitle" formControlName="categoryTitle">
+            <option>Material category</option>
+            <option *ngFor="let category of categories">
+              {{category.title}}
+            </option>
+          </select>
+          </label>
+            <div class="error" *ngIf="submitted && category.errors">
+                <div class="error" *ngIf="category.errors['required']">
+                    This field is required
+                </div>
+            </div>
+        </div>
+        <div class="input">
+            <ejs-richtexteditor [toolbarSettings]="tools" formControlName="content">
+            </ejs-richtexteditor>
+            <div class="error" *ngIf="submitted && content.errors">
+                <div class="error" *ngIf="content.errors['required']">
+                    This field is required
+                </div>
+            </div>
+            <!-- <div class="text-editor-header">
+                <button class="text-editor" data-element="bold">
+                <i class="fa fa-bold"></i>
+              </button>
+            </div> -->
+        </div>
+        <div class="btn">
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</form>

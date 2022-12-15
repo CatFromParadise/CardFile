@@ -1,0 +1,18 @@
+.header {
+    text-align: center;
+}
+
+.grid-container {
+    margin-top: 2%;
+}
+
+.show-saved>button {
+    padding: 1%;
+    font-weight: bold;
+    font-size: 1.2em;
+    /* background-color: rgb(132, 15, 236); */
+    background-color: #FFBB1C;
+    color: #000;
+    cursor: pointer;
+    border: none;
+}

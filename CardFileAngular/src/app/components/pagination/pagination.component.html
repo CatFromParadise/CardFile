@@ -1,0 +1,9 @@
+<div class="page-buttons">
+    <button (click)="onPrevious()" [disabled]="this.currentPage <= 1">
+      <img class="arrow" src="../../../assets/arrow-left.png">
+  </button>
+    <p>{{currentPage}}</p>
+    <button (click)="onNext()" [disabled]="this.currentPage >= this.totalPages">
+    <img class="arrow" src="../../../assets/arrow-right.png">
+  </button>
+</div>

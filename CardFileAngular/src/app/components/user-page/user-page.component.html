@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="header">
+        <p>This is a page of {{user?.userName}}</p>
+        <button class="print-button" (click)="sendTextMaterialsOfUser()">
+          <mat-icon>print</mat-icon>
+        </button>
+    </div>
+    <div class="info">
+        <div>
+            <p>Total count of text materials: {{totalCount}}</p>
+            <p>Total count of likes: {{totalLikeCount}}</p>
+        </div>
+    </div>
+    <div>
+        <p class="text-material-list">List of all text materials</p>
+        <app-text-material (click)="router.navigateByUrl('main/' + text.id);" *ngFor="let text of textMaterials" [textMaterial]="text">
+        </app-text-material>
+        <app-pagination [totalPages]="paginator?.TotalPages" (next)="onNextPage($event) " (previous)="onPreviousPage($event) " [isUserPage]="true"></app-pagination>
+    </div>
+</div>

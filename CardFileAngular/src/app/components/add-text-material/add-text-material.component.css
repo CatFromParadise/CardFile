@@ -1,0 +1,68 @@
+@import '../../../../node_modules/@syncfusion/ej2-base/styles/material.css';
+@import '../../../../node_modules/@syncfusion/ej2-icons/styles/material.css';
+@import '../../../../node_modules/@syncfusion/ej2-buttons/styles/material.css';
+@import '../../../../node_modules/@syncfusion/ej2-splitbuttons/styles/material.css';
+@import '../../../../node_modules/@syncfusion/ej2-inputs/styles/material.css';
+@import '../../../../node_modules/@syncfusion/ej2-lists/styles/material.css';
+@import '../../../../node_modules/@syncfusion/ej2-navigations/styles/material.css';
+@import '../../../../node_modules/@syncfusion/ej2-popups/styles/material.css';
+@import '../../../../node_modules/@syncfusion/ej2-richtexteditor/styles/material.css';
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    row-gap: 1em;
+    margin-top: 11%;
+}
+
+.create-text-material {
+    grid-column: 4 / 8;
+    text-align: center;
+    font-weight: bold;
+    font-size: 5vh;
+    color: #02314D;
+}
+
+[class*="input"] {
+    grid-column: 3 / 9;
+}
+
+input[class*="input-item"] {
+    width: 100%;
+    height: 7vh;
+    padding-left: 3%;
+    border-radius: 15px;
+    border: none;
+}
+
+.categoryTitle-label {
+    font-size: 1.2em;
+    color: #02314D;
+    font-weight: bold;
+    padding: 1%;
+}
+
+.categoryTitle {
+    padding: 1%;
+    font-size: 1.2em;
+}
+
+.btn {
+    margin: 0;
+    padding: 0;
+    grid-column: 5 / 7;
+}
+
+.error {
+    color: #02314D;
+}
+
+.btn>button {
+    width: 100%;
+    height: 5vh;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    background-color: #02314D;
+    color: #FFF;
+    cursor: pointer;
+}

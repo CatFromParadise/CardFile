@@ -1,0 +1,11 @@
+<div>
+    <p class="text">
+        Welcome, {{userName}} <button class="btn-change-username" (click)="changeUserInfo()"><mat-icon>build</mat-icon></button>
+    </p>
+</div>
+<app-sorting-form [isHomePage]="true" (filter)="onFilter($event)"></app-sorting-form>
+<div class=" grid-container ">
+    <app-text-material (click)="router.navigateByUrl('home-page/' + text.id);" *ngFor="let text of ownTextMaterials " [textMaterial]="text">
+    </app-text-material>
+</div>
+<app-pagination [totalPages]="paginator?.TotalPages" (next)="onNextPage($event) " (previous)="onPreviousPage($event) " [isHomePage]="true"></app-pagination>

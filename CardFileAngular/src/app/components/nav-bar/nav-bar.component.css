@@ -1,0 +1,37 @@
+.container {
+    display: flex;
+    background-color: #02314D;
+    justify-content: space-between;
+}
+
+.container>div {
+    display: flex;
+}
+
+.link {
+    text-align: center;
+    padding: 1% 1%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.link>a {
+    text-decoration: none;
+    font-size: 0.8em;
+    color: #FFF;
+    padding-right: 15px;
+}
+
+.link>a:hover {
+    text-decoration: underline;
+}
+
+.link>a.active {
+    text-decoration: underline;
+}
+
+@media screen and (min-width: 601px) {
+    .link>a {
+        font-size: 1.2em;
+    }
+}

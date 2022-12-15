@@ -1,0 +1,11 @@
+<div *ngIf="userId" class="show-saved">
+    <button *ngIf="!showSaved" (click)="onShowSaved()">Show saved</button>
+    <button *ngIf="showSaved" (click)="onShowAll()">Show all</button>
+</div>
+<app-sorting-form (filter)="onFilter($event)">
+</app-sorting-form>
+<div class=" grid-container ">
+    <app-text-material (click)="router.navigateByUrl('main/' + text.id);" *ngFor="let text of textMaterials " [textMaterial]="text ">
+    </app-text-material>
+</div>
+<app-pagination [totalPages]="paginator?.TotalPages" (next)="onNextPage($event) " (previous)="onPreviousPage($event) "></app-pagination>

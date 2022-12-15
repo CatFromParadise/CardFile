@@ -1,0 +1,43 @@
+<div class="container">
+    <div>
+        <label class="notifications">
+    Receive email notifications when a text material is created, deleted, approved or rejected or in case you're banned <input type="checkbox" [checked]="user?.receiveNotifications" (change)="toggleReceiveNotifications()">
+    </label>
+    </div>
+    <div>
+        Your user name is <span class="user-name">{{user?.userName}}</span>
+        <button class="btn-change-user-name" (click)="openFieldForChangingUserName()"><mat-icon>account_circle</mat-icon></button>
+        <form *ngIf="changeUserName" [formGroup]="changeUserNameForm" (ngSubmit)="onChangeUserName()">
+            <input class="new-user-name" type="text" formControlName="newUserName">
+            <div *ngIf="submittedUserNameForm && newUserName.errors" class="error">
+                <div *ngIf="newUserName.errors['required']">
+                    This field is required
+                </div>
+                <div *ngIf="newUserName.errors['minlength']">
+                    User name must at least 4 letters long
+                </div>
+                <div *ngIf="newUserName.errors['isAllLetters']">
+                    User name must be all letters
+                </div>
+            </div>
+            <button class="btn-submit" type="submit">Change</button>
+        </form>
+    </div>
+    <div>
+        Your email is <span class="email">{{user?.email}}</span>
+        <button class="btn-change-email" (click)="openFieldForChangingEmail()"><mat-icon>account_circle</mat-icon></button>
+        <form *ngIf="changeUserEmail" [formGroup]="changeEmailForm" (ngSubmit)="onChangeEmail()">
+            <p class="caution">Be careful. Once you change your email you'll need to confirm it. Otherwise you will lose access to your account</p>
+            <input class="new-email" type="text" formControlName="newEmail">
+            <div *ngIf="submittedEmailForm && newEmail.errors" class="error">
+                <div *ngIf="newEmail.errors['required']">
+                    This field is required
+                </div>
+                <div *ngIf="newEmail.errors['email']">
+                    This email is not valid
+                </div>
+            </div>
+            <button class="btn-submit" type="submit">Change</button>
+        </form>
+    </div>
+</div>

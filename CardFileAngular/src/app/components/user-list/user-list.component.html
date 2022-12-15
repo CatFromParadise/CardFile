@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="header">
+        <p>Here is the list of all users</p>
+    </div>
+    <app-user-sorting-form (filter)="onFilter($event)"></app-user-sorting-form>
+    <div class="body">
+        <app-user-item class="item" *ngFor="let user of users" [user]="user" (reload)="reload()">
+        </app-user-item>
+    </div>
+</div>
+<app-pagination [totalPages]="paginator?.TotalPages" (next)="onNextPage($event) " (previous)="onPreviousPage($event) " [isUserListPage]="true"></app-pagination>
